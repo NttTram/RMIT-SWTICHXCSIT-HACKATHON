@@ -1,38 +1,175 @@
+/* General Styling */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f0f0;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Navigation Styling */
+.App-nav {
+  background-color: #333;
+  padding: 20px;
+  text-align: right;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.App-nav ul li {
+  display: inline-block;
+  margin: 0 15px;
 }
 
-.App-link {
+.App-nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.App-nav ul li a:hover {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-banner {
+  background-color: #1e2a38; /* A dark blue-gray color to match a modern, professional theme */
+  background-size: cover;
+  background-position: center;
+  padding: 60px 20px; /* Reduced padding to make it smaller */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+  height: 250px; /* Reduced the height */
+}
+
+.App-banner h1 {
+  font-size: 3rem; /* Adjust font size to fit smaller banner */
+}
+
+.App-banner p {
+  font-size: 1.2rem; /* Adjust paragraph size to fit better */
+}
+
+.App-banner-text {
+  max-width: 700px;
+  text-align: left;
+}
+
+.App-banner h1 {
+  font-size: 4rem;
+  margin: 0;
+}
+
+.App-banner .highlight {
+  color: #61dafb;
+}
+
+.App-banner p {
+  font-size: 1.5rem;
+  margin: 20px 0;
+}
+
+.App-button {
+  background-color: #61dafb;
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.App-button:hover {
+  background-color: #21a1f1;
+}
+
+/* Section Styling */
+.App-section {
+  padding: 50px;
+  background-color: white;
+  margin: 20px auto;
+  max-width: 1000px;
+  text-align: left;
+}
+
+.App-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.App-section p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.App-image {
+  margin-top: 30px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Features Section */
+.App-features {
+  background-color: #f5f5f5;
+  padding: 50px;
+}
+
+.App-features h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.App-features-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.feature-item {
+  flex: 1;
+  margin: 20px;
+  max-width: 300px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.feature-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.feature-item p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.feature-item:hover {
+  transform: translateY(-10px);
+}
+
+/* Footer Styling */
+.App-footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
 }
