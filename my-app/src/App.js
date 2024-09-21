@@ -8,6 +8,8 @@ import Services from './pages/Services';
 import Contact from './pages/Contact';
 import logo from './assets/logo.png';
 
+import Australia from './pages/Australia';
+import Accommodation from './pages/Accommodation';
 
 function App() {
   return (
@@ -37,6 +39,9 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/australia" element={<Australia />} />
+          <Route path="/accommodation" element={<Accommodation />} />
+
         </Routes>
     </Router>
       
