@@ -2,11 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-<<<<<<< HEAD
 import { BrowserRouter as Router } from 'react-router-dom'; // Import BrowserRouter
-=======
-// import { createRoot } from 'react-dom/client';
->>>>>>> b4b1e17a94b1d3e3b8e65d17655696317a62f243
 import { Auth0Provider } from '@auth0/auth0-react';
 import reportWebVitals from './reportWebVitals';
 
