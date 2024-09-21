@@ -11,8 +11,9 @@ import Host from './pages/Host'; // Import Host component
 import logo from './assets/logo.png';
 
 import Australia from './pages/Australia';
-import LoginButton from './LoginButton';
-import LogoutButton from './LogoutButton';
+import Accommodation from './pages/Accommodation';
+import LoginButton from './util/LoginButton';
+import LogoutButton from './util/LogoutButton';
 
 import { useAuth0 } from '@auth0/auth0-react';
 
