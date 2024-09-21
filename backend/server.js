@@ -29,7 +29,6 @@ db.serialize(() => {
   )`);
 });
 
-<<<<<<< Updated upstream
 // POST route to handle form submissions
 app.post('/api/accommodations', (req, res) => {
   const { student, address, price_week, type, background, image, description } = req.body;
@@ -49,9 +48,7 @@ app.post('/api/accommodations', (req, res) => {
   stmt.finalize();
 });
 
-// Start the server
-=======
-<<<<<<< HEAD
+
 // Start the server
 // API to get accommodation by ID
 app.get('/accommodation/:id', (req, res) => {
@@ -68,9 +65,18 @@ app.get('/accommodation/:id', (req, res) => {
   });
 });
 
-=======
->>>>>>> parent of 428ef74 (submit form page)
->>>>>>> Stashed changes
+app.get('/accommodations', (req, res) => {
+  db.all("SELECT * FROM accommodations", [], (err, rows) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+      return;
+    }
+    res.json({
+      data: rows
+    });
+  });
+});
+
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
