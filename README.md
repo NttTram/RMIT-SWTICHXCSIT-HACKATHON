@@ -15,4 +15,9 @@ Think of it like the domestic students are the host family for the international
 ## Usage
 * In terminal: cd my-app, npm install, npm start
 
+
+## Developmental Solutions: B4
+Please clearly mark the generalised solutions in the repository README section.
+
+
 ## Please do not use this code. This is only for our hackathon.
