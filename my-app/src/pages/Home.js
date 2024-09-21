@@ -1,4 +1,5 @@
 import React from 'react';
+import student from '../assets/student.jpg';
 
 function Home() {
   return(
@@ -11,7 +12,7 @@ function Home() {
         At CultureConnect, we bridge the gap between international and domestic students by offering a unique home-stay experience. 
         Through cultural immersion and shared experiences, we help international students adjust to life in Australia while building lasting relationships.
     </p>
-    <img src="https://via.placeholder.com/600" alt="International Students" className="App-image" />
+    <img src={student} alt="International Students" className="App-image" />
     </section>
 
     <section className="App-features">
