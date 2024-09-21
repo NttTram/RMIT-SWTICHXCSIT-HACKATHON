@@ -179,3 +179,26 @@ body, html {
   width: 50px; /* Set the desired width */
   height: 50px; /* Maintain aspect ratio */
 }
+
+.accommodation-image {
+  width: 500px;
+  height: 350px;
+  border-radius: 8px;
+    margin-right: 20px;
+
+}
+
+
+
+.container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+
+
+.text-section {
+  flex: 1;
+}
