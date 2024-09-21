@@ -62,7 +62,7 @@ app.get('/accommodations', (req, res) => {
 app.post('/api/accommodations', upload.single('image'), (req, res) => {
   const { student, address, price_week, type, background, description } = req.body;
   const imagePath = req.file ? `/uploads/${req.file.filename}` : null; // Image path
-
+});
 // POST route to handle form submissions
 app.post('/api/accommodations', (req, res) => {
   const { student, address, price_week, type, background, image, description } = req.body;
