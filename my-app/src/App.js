@@ -1,6 +1,6 @@
 import './App.css';
 import './button-style.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 
 import Home from './pages/Home';
 import About from './pages/About';
@@ -16,15 +16,22 @@ import LogoutButton from './LogoutButton';
 import { useAuth0 } from '@auth0/auth0-react';
 
 function App() {
-  const { isAuthenticated, logout, user } = useAuth0();
+  const { isAuthenticated, loginWithRedirect } = useAuth0();
+  const navigate = useNavigate();
+
+  const handleButtonClick = (destination) => {
+    if (!isAuthenticated) {
+      loginWithRedirect(); // Redirect to the login page if the user is not logged in
+    } else {
+      navigate(destination); // Navigate to the desired page if the user is authenticated
+    }
+  };
+
   return (
     <div className="App">
-
-<Router>
-
       <header className="App-header">
         <nav className="App-nav">
-        <ul>
+          <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="/services">Services</a></li>
@@ -33,37 +40,46 @@ function App() {
               <li>
                 <LogoutButton />
               </li>
-              ) : (
+            ) : (
               <li>
                 <LoginButton />
               </li>
-             )}
+            )}
           </ul>
         </nav>
         <div className="App-banner">
           <div className="App-banner-text">
             <h1>Welcome to <span className="highlight">CultureConnect</span></h1>
             <p>Empowering international students with a home away from home</p>
-            <button className="App-button">Join Now</button>
+            <div className="button-group">
+              <button
+                className="App-button primary-button"
+                onClick={() => handleButtonClick('/offer-place')} // Redirect to the 'I have a place' page
+              >
+                I have a place
+              </button>
+              <button
+                className="App-button secondary-button"
+                onClick={() => handleButtonClick('/need-place')} // Redirect to the 'I need a place' page
+              >
+                I need a place
+              </button>
+            </div>
           </div>
         </div>
       </header>
       <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/australia" element={<Australia />} />
-          <Route path="/accommodation" element={<Accommodation />} />
-
-        </Routes>
-    </Router>
-      
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/australia" element={<Australia />} />
+        <Route path="/accommodation" element={<Accommodation />} />
+      </Routes>
 
       <footer className="App-footer">
         <p>© 2024 CultureConnect | SEASA</p>
         <img src={logo} alt="CultureConnect Logo" className="App-logo" /> 
-
       </footer>
     </div>
   );
