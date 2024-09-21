@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { createRoot } from 'react-dom/client';
+// import { createRoot } from 'react-dom/client';
 import { Auth0Provider } from '@auth0/auth0-react';
 import reportWebVitals from './reportWebVitals';
 
@@ -11,9 +11,10 @@ root.render(
   <Auth0Provider
     domain="dev-i6xg01jdb8148mwe.au.auth0.com"
     clientId="kDTBqwVq5wt2GuJo5QvgGewx3xrGgHRF"
-    authorizationParams={{
-      redirect_uri: window.location.origin
-    }}
+    // authorizationParams={{
+    //   redirect_uri: window.location.origin
+    // }}
+    redirectUri={window.location.origin}
   >
     <App />
   </Auth0Provider>,
