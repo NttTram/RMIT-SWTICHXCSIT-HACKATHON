@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
+import Host from './pages/Host';
 import logo from './assets/logo.png';
 
 import Australia from './pages/Australia';
@@ -53,6 +54,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/australia" element={<Australia />} />
           <Route path="/accommodation" element={<Accommodation />} />
+          <Route path="/have-place" element={<Host/>} />
 
         </Routes>
     </Router>
