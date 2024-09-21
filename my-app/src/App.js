@@ -6,11 +6,11 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
-import Host from './pages/Host';
+import Accommodation from './pages/Accommodation';
+import Host from './pages/Host'; // Import Host component
 import logo from './assets/logo.png';
 
 import Australia from './pages/Australia';
-import Accommodation from './pages/Accommodation';
 import LoginButton from './LoginButton';
 import LogoutButton from './LogoutButton';
 
@@ -38,9 +38,10 @@ function App() {
             <li><a href="/services">Services</a></li>
             <li><a href="/contact">Contact</a></li>
             {isAuthenticated ? (
-              <li> 
-                <LogoutButton /> 
-              </li>) : (
+              <li>
+                <LogoutButton />
+              </li>
+            ) : (
               <li>
                 <LoginButton />
               </li>
@@ -54,13 +55,13 @@ function App() {
             <div className="button-group">
               <button
                 className="App-button primary-button"
-                onClick={() => handleButtonClick('/offer-place')} // Redirect to the 'I have a place' page
+                onClick={() => handleButtonClick('/host')} // Redirect to the 'Host' page
               >
                 I have a place
               </button>
               <button
                 className="App-button secondary-button"
-                onClick={() => handleButtonClick('/accommodation')} // Redirect to the 'Accommodation' page
+                onClick={() => handleButtonClick('/accommodation')} // Redirect to the 'I need a place' page
               >
                 I need a place
               </button>
@@ -75,7 +76,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/australia" element={<Australia />} />
         <Route path="/accommodation" element={<Accommodation />} />
-        <Route path="/have-place" element={<Host />} />
+        <Route path="/host" element={<Host />} /> {/* Added Host route */}
       </Routes>
 
       <footer className="App-footer">
