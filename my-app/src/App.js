@@ -16,8 +16,14 @@ import LogoutButton from './LogoutButton';
 import { useAuth0 } from '@auth0/auth0-react';
 
 function App() {
+<<<<<<< HEAD
   const { isAuthenticated, loginWithRedirect } = useAuth0();
   const navigate = useNavigate();
+=======
+  const { isAuthenticated } = useAuth0();
+  return (
+    <div className="App">
+>>>>>>> b4b1e17a94b1d3e3b8e65d17655696317a62f243
 
   const handleButtonClick = (destination) => {
     if (!isAuthenticated) {
@@ -37,7 +43,11 @@ function App() {
             <li><a href="/services">Services</a></li>
             <li><a href="/contact">Contact</a></li>
             {isAuthenticated ? (
+              <li> 
+                <LogoutButton /> 
+              </li>) : (
               <li>
+<<<<<<< HEAD
                 <LogoutButton />
               </li>
             ) : (
@@ -45,12 +55,17 @@ function App() {
                 <LoginButton />
               </li>
             )}
+=======
+                <LoginButton /> 
+              </li>)}
+>>>>>>> b4b1e17a94b1d3e3b8e65d17655696317a62f243
           </ul>
         </nav>
         <div className="App-banner">
           <div className="App-banner-text">
             <h1>Welcome to <span className="highlight">CultureConnect</span></h1>
             <p>Empowering international students with a home away from home</p>
+<<<<<<< HEAD
             <div className="button-group">
               <button
                 className="App-button primary-button"
@@ -65,6 +80,9 @@ function App() {
                 I need a place
               </button>
             </div>
+=======
+              <button className="App-button">Join Now</button>
+>>>>>>> b4b1e17a94b1d3e3b8e65d17655696317a62f243
           </div>
         </div>
       </header>

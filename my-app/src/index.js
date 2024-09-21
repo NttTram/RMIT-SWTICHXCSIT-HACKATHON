@@ -2,7 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+<<<<<<< HEAD
 import { BrowserRouter as Router } from 'react-router-dom'; // Import BrowserRouter
+=======
+// import { createRoot } from 'react-dom/client';
+>>>>>>> b4b1e17a94b1d3e3b8e65d17655696317a62f243
 import { Auth0Provider } from '@auth0/auth0-react';
 import reportWebVitals from './reportWebVitals';
 
@@ -11,9 +15,10 @@ root.render(
   <Auth0Provider
     domain="dev-i6xg01jdb8148mwe.au.auth0.com"
     clientId="kDTBqwVq5wt2GuJo5QvgGewx3xrGgHRF"
-    authorizationParams={{
-      redirect_uri: window.location.origin
-    }}
+    // authorizationParams={{
+    //   redirect_uri: window.location.origin
+    // }}
+    redirectUri={window.location.origin}
   >
     {/* Wrap App inside Router */}
     <Router>

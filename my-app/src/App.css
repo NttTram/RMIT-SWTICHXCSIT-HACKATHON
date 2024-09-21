@@ -1,4 +1,7 @@
 /* General Styling */
+:root {
+  --color-highlight: #5eead4;
+}
 body, html {
   margin: 0;
   padding: 0;
@@ -200,3 +203,47 @@ body, html {
   transform: translateY(-10px);
 }
 
+<<<<<<< HEAD
+=======
+/* Footer Styling */
+.App-footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+
+.App-logo {
+  width: 50px; /* Set the desired width */
+  height: 50px; /* Maintain aspect ratio */
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding: 0;
+  gap: 10px;
+}
+
+.contact-info a {
+ text-decoration: none;
+ color: grey;
+ transition:250ms
+}
+
+.contact-info a:hover {
+  color: var(--color-highlight)
+}
+
+p a {
+  text-decoration: none;
+  color: black;
+  transition: color 250ms;
+}
+p a:hover {
+ color: var(--color-highlight)
+}
+>>>>>>> b4b1e17a94b1d3e3b8e65d17655696317a62f243
