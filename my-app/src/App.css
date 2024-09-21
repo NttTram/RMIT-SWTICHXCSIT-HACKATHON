@@ -266,68 +266,61 @@ p a:hover {
 
 /* Accommodation Page Styles */
 .accommodation-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 50px;
   background-color: #f5f5f5;
 }
 
-.accommodation-heading {
-  font-size: 2.5rem;
-  color: #333;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.accommodation-intro {
-  font-size: 1.2rem;
-  color: #666;
-  text-align: center;
-  margin-bottom: 40px;
-}
-
 .accommodation-list {
   display: flex;
-  flex-direction: column; /* Stack items vertically */
-  gap: 30px; /* Space between each card */
+  flex-wrap: wrap;
+  justify-content: center; /* Center the cards */
+  gap: 30px; /* Space between cards */
+  max-width: 1200px; /* Limit the width of the entire container */
+  width: 100%;
 }
 
 .accommodation-card {
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  max-width: 600px; /* Set a max width to keep cards centered */
-  margin: 0 auto; /* Center the card */
+  width: 400px; /* Increase the width of the card */
   padding: 20px;
-  text-align: left;
+  min-height: 500px; /* Ensure consistent card height */
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  margin: 20px;
 }
 
 .accommodation-image {
   width: 100%;
-  height: 200px;
+  height: 250px; /* Adjust the image height */
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 20px;
 }
 
-.accommodation-details h3 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  color: #1e2a38;
+.accommodation-details {
+  text-align: left;
 }
 
-.accommodation-background,
-.accommodation-address,
-.accommodation-type,
-.accommodation-price {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 10px;
+.accommodation-heading {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.accommodation-intro {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .accommodation-price {
   font-weight: bold;
-  color: #61dafb;
+  margin-top: 10px;
 }
 
 .connect-button {
@@ -338,13 +331,15 @@ p a:hover {
   font-size: 1rem;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: auto;
+  text-align: center;
+  margin-top: 10px;
   transition: background-color 0.3s ease;
 }
 
 .connect-button:hover {
   background-color: #21a1f1;
 }
+
 
 /* Host Form Styling */
 .host-form {
