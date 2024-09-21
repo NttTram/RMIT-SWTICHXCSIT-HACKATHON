@@ -13,7 +13,13 @@ Think of it like the domestic students are the host family for the international
 * Install node.js
 
 ## Usage
+### Frontend
 * In terminal: cd my-app, npm install, npm start
+
+### Backend
+* In terminal: cd backend, npm install, node server.js
+
+
 
 
 ## Developmental Solutions: B4
