@@ -1,13 +1,18 @@
 import './App.css';
-
+import './button-style.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './App.css';
+
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
+import LoginButton from './LoginButton';
+import LogoutButton from './LogoutButton';
+
+import { useAuth0 } from '@auth0/auth0-react';
 
 function App() {
+  const { isAuthenticated, logout, user } = useAuth0();
   return (
     <div className="App">
 
@@ -20,6 +25,15 @@ function App() {
             <li><a href="/about">About</a></li>
             <li><a href="/services">Services</a></li>
             <li><a href="/contact">Contact</a></li>
+            {isAuthenticated ? (
+              <li>
+                <LogoutButton />
+              </li>
+              ) : (
+              <li>
+                <LoginButton />
+              </li>
+             )}
           </ul>
         </nav>
         <div className="App-banner">
