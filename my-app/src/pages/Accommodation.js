@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
 const Accommodation = () => {
   const [accommodations, setAccommodations] = useState([]);
@@ -32,11 +31,6 @@ const Accommodation = () => {
                 className="accommodation-image"
               />
               <div className="accommodation-details">
-                <li key={accommodation.id}>
-                  <Link to={`/accommodation/${accommodation.id}`}>
-                    {accommodation.student} - {accommodation.address}
-                  </Link>
-                </li>
                 <h3>Host: {accommodation.student}</h3>
                 <p className="accommodation-background">
                   Background: {accommodation.background}
