@@ -17,6 +17,7 @@ Run both on separate terminals.
 
 ### Frontend
 * In terminal: cd my-app, npm install, npm start
+* In terminal: cd my-app, npm install @auth0/auth0-react
 
 ### Backend
 * In terminal: cd backend, npm install, node server.js
