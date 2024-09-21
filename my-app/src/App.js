@@ -69,17 +69,14 @@ function App() {
         </div>
       </header>
       <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/australia" element={<Australia />} />
-          <Route path="/accommodation" element={<Accommodation />} />
-          <Route path="/have-place" element={<Host/>} />
-
-        </Routes>
-    </Router>
-      
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/australia" element={<Australia />} />
+        <Route path="/accommodation" element={<Accommodation />} />
+        <Route path="/have-place" element={<Host />} />
+      </Routes>
 
       <footer className="App-footer">
         <p>© 2024 CultureConnect | SEASA</p>
