@@ -11,7 +11,6 @@ import Host from './pages/Host'; // Import Host component
 import logo from './assets/logo.png';
 
 import Australia from './pages/Australia';
-import Accommodation from './pages/Accommodation';
 import LoginButton from './util/LoginButton';
 import LogoutButton from './util/LogoutButton';
 
