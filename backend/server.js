@@ -2,6 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const sqlite3 = require('sqlite3').verbose();
 const cors = require('cors');
+const multer = require('multer'); // For handling file uploads
+const path = require('path');
 
 const app = express();
 const port = 3030;
@@ -11,6 +13,9 @@ app.use(cors());
 
 // Middleware to parse incoming request body as JSON
 app.use(bodyParser.json());
+
+// Serve static files from the 'uploads' directory
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Connect to SQLite database
 const db = new sqlite3.Database('database.db');
@@ -29,7 +34,35 @@ db.serialize(() => {
   )`);
 });
 
-<<<<<<< Updated upstream
+
+// Set up multer to store uploaded files in 'uploads' directory
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'uploads/');
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + path.extname(file.originalname)); // Unique file names
+  }
+});
+
+const upload = multer({ storage });
+
+// GET route to retrieve all accommodations
+app.get('/accommodations', (req, res) => {
+  db.all("SELECT * FROM accommodations", [], (err, rows) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+      return;
+    }
+    res.json({ data: rows });
+  });
+});
+
+// POST route to handle form submissions with file upload
+app.post('/api/accommodations', upload.single('image'), (req, res) => {
+  const { student, address, price_week, type, background, description } = req.body;
+  const imagePath = req.file ? `/uploads/${req.file.filename}` : null; // Image path
+
 // POST route to handle form submissions
 app.post('/api/accommodations', (req, res) => {
   const { student, address, price_week, type, background, image, description } = req.body;
@@ -37,7 +70,7 @@ app.post('/api/accommodations', (req, res) => {
   // Prepare and run the SQL statement
   const stmt = db.prepare("INSERT INTO accommodations (student, address, price_week, type, background, image, description) VALUES (?, ?, ?, ?, ?, ?, ?)");
   
-  stmt.run(student, address, price_week, type, background, image, description, (err) => {
+  stmt.run(student, address, price_week, type, background, imagePath, description, (err) => {
     if (err) {
       console.error("Error inserting data:", err);
       res.status(500).send({ message: 'Error inserting data' });
@@ -50,27 +83,7 @@ app.post('/api/accommodations', (req, res) => {
 });
 
 // Start the server
-=======
-<<<<<<< HEAD
-// Start the server
-// API to get accommodation by ID
-app.get('/accommodation/:id', (req, res) => {
-  const id = req.params.id;
-  
-  db.get('SELECT * FROM accommodations WHERE id = ?', [id], (err, row) => {
-    if (err) {
-      return res.status(500).send({ error: 'Database error' });
-    }
-    if (!row) {
-      return res.status(404).send({ error: 'Accommodation not found' });
-    }
-    res.json(row); // Send the row data as JSON
-  });
-});
 
-=======
->>>>>>> parent of 428ef74 (submit form page)
->>>>>>> Stashed changes
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });

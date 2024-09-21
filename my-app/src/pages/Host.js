@@ -19,7 +19,7 @@ function Host() {
   const handleChange = (e) => {
     const { name, value, files } = e.target;
     if (name === "image") {
-      setFormData({ ...formData, [name]: files[0] });
+      setFormData({ ...formData, [name]: files[0] }); // File input for image
     } else {
       setFormData({ ...formData, [name]: value });
     }
@@ -28,21 +28,20 @@ function Host() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Create FormData to send file and other form data
+    const newFormData = new FormData();
+    newFormData.append("student", formData.name);
+    newFormData.append("address", formData.address);
+    newFormData.append("price_week", formData.pricePerWeek);
+    newFormData.append("type", formData.typeOfHome);
+    newFormData.append("background", formData.background);
+    newFormData.append("image", formData.image); // Append the image file
+    newFormData.append("description", formData.description);
+
     try {
       const response = await fetch("http://localhost:3030/api/accommodations", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          student: formData.name,                // Use the correct field names
-          address: formData.address,
-          price_week: formData.pricePerWeek,
-          type: formData.typeOfHome,
-          background: formData.background,
-          image: formData.image ? formData.image.name : "",  // Send just the file name
-          description: formData.description,
-        }),
+        body: newFormData, // Send FormData
       });
 
       if (response.ok) {
