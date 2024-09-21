@@ -76,7 +76,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/australia" element={<Australia />} />
         <Route path="/accommodation" element={<Accommodation />} />
-        <Route path="/host" element={<Host />} /> {/* Added Host route */}
+        <Route path="/offer-place" element={<Host />} />
       </Routes>
 
       <footer className="App-footer">
