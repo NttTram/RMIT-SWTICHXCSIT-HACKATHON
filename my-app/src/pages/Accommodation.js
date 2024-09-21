@@ -19,6 +19,9 @@ const Accommodation = () => {
 
           {accommodations.map((accommodation) => (
             <div className="container" key={accommodation.id}>
+
+
+
               <img
                 src={accommodation.image}
                 alt={accommodation.name}
@@ -26,6 +29,10 @@ const Accommodation = () => {
               />
 
               <div className="text-section">
+                <button className="App-button">
+                  Connect
+                </button>
+
                 <h3>Host: {accommodation.student} ({accommodation.background})</h3>
                 <p>Address: {accommodation.address}</p>
                 <p>Type: {accommodation.type}</p>
