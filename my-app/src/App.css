@@ -173,3 +173,9 @@ body, html {
   text-align: center;
   font-size: 0.9rem;
 }
+
+
+.App-logo {
+  width: 50px; /* Set the desired width */
+  height: 50px; /* Maintain aspect ratio */
+}

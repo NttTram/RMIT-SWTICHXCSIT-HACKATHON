@@ -6,6 +6,8 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
+import logo from './assets/logo.png';
+
 
 function App() {
   return (
@@ -15,7 +17,7 @@ function App() {
 
       <header className="App-header">
         <nav className="App-nav">
-          <ul>
+        <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="/services">Services</a></li>
@@ -40,7 +42,9 @@ function App() {
       
 
       <footer className="App-footer">
-        <p>© 2024 CultureConnect | RMIT Hackathon</p>
+        <p>© 2024 CultureConnect | SEASA</p>
+        <img src={logo} alt="CultureConnect Logo" className="App-logo" /> 
+
       </footer>
     </div>
   );
