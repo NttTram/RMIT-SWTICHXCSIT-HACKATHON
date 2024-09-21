@@ -16,7 +16,7 @@ import LogoutButton from './LogoutButton';
 import { useAuth0 } from '@auth0/auth0-react';
 
 function App() {
-  const { isAuthenticated, logout, user } = useAuth0();
+  const { isAuthenticated } = useAuth0();
   return (
     <div className="App">
 
@@ -30,21 +30,19 @@ function App() {
             <li><a href="/services">Services</a></li>
             <li><a href="/contact">Contact</a></li>
             {isAuthenticated ? (
+              <li> 
+                <LogoutButton /> 
+              </li>) : (
               <li>
-                <LogoutButton />
-              </li>
-              ) : (
-              <li>
-                <LoginButton />
-              </li>
-             )}
+                <LoginButton /> 
+              </li>)}
           </ul>
         </nav>
         <div className="App-banner">
           <div className="App-banner-text">
             <h1>Welcome to <span className="highlight">CultureConnect</span></h1>
             <p>Empowering international students with a home away from home</p>
-            <button className="App-button">Join Now</button>
+              <button className="App-button">Join Now</button>
           </div>
         </div>
       </header>
