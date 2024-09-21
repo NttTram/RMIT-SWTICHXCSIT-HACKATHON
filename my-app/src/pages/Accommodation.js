@@ -35,6 +35,9 @@ const Accommodation = () => {
                 <p className="accommodation-background">
                   Background: {accommodation.background}
                 </p>
+                <p className="accommodation-background">
+                  Description: {accommodation.Description}
+                </p>
                 <p className="accommodation-address">
                   Address: {accommodation.address}
                 </p>
