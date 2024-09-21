@@ -10,6 +10,10 @@ const Accommodation = () => {
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
+  const handleConnectClick = (student) => {
+    alert(`You have requested, ${student}.`);
+  };
+
   return (
     <>
       <div>
@@ -19,9 +23,6 @@ const Accommodation = () => {
 
           {accommodations.map((accommodation) => (
             <div className="container" key={accommodation.id}>
-
-
-
               <img
                 src={accommodation.image}
                 alt={accommodation.name}
@@ -29,7 +30,10 @@ const Accommodation = () => {
               />
 
               <div className="text-section">
-                <button className="App-button">
+                <button
+                  className="App-button"
+                  onClick={() => handleConnectClick(accommodation.student)}
+                >
                   Connect
                 </button>
 
