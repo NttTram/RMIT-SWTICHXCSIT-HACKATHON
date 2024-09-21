@@ -34,6 +34,7 @@ db.serialize(() => {
   )`);
 });
 
+
 // Set up multer to store uploaded files in 'uploads' directory
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -62,6 +63,10 @@ app.post('/api/accommodations', upload.single('image'), (req, res) => {
   const { student, address, price_week, type, background, description } = req.body;
   const imagePath = req.file ? `/uploads/${req.file.filename}` : null; // Image path
 
+// POST route to handle form submissions
+app.post('/api/accommodations', (req, res) => {
+  const { student, address, price_week, type, background, image, description } = req.body;
+
   // Prepare and run the SQL statement
   const stmt = db.prepare("INSERT INTO accommodations (student, address, price_week, type, background, image, description) VALUES (?, ?, ?, ?, ?, ?, ?)");
   
@@ -78,6 +83,7 @@ app.post('/api/accommodations', upload.single('image'), (req, res) => {
 });
 
 // Start the server
+
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
