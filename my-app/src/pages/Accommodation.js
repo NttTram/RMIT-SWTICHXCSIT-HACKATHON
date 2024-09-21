@@ -26,7 +26,7 @@ const Accommodation = () => {
           {accommodations.map((accommodation) => (
             <div className="accommodation-card" key={accommodation.id}>
               <img
-                src={accommodation.image}
+                src={`http://localhost:3030${accommodation.image}`} // Use the correct image path
                 alt={accommodation.name}
                 className="accommodation-image"
               />
