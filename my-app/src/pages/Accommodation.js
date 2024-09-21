@@ -18,7 +18,8 @@ const Accommodation = () => {
     <>
       <div>
         <section className="App-section">
-          <h2>Welcome to Accommodation Page</h2>
+          <h2>Welcome to the Accommodation Page</h2>
+          <p>Find your ideal accommodation here, and even your future friend!</p>
           <br />
 
           {accommodations.map((accommodation) => (
