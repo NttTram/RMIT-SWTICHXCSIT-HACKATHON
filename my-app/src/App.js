@@ -8,7 +8,6 @@ import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Accommodation from './pages/Accommodation';
 import Host from './pages/Host'; // Import Host component
-import Content from './pages/Content';
 import logo from './assets/logo.png';
 
 import Australia from './pages/Australia';
@@ -78,7 +77,6 @@ function App() {
         <Route path="/australia" element={<Australia />} />
         <Route path="/accommodation" element={<Accommodation />} />
         <Route path="/host" element={<Host />} />
-        <Route path="/content/:id" element={<Content />} />
       </Routes>
 
       <footer className="App-footer">
