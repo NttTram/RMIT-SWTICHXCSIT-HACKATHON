@@ -15,39 +15,47 @@ const Accommodation = () => {
   };
 
   return (
-    <>
-      <div>
-        <section className="App-section">
-          <h2>Welcome to the Accommodation Page</h2>
-          <p>Find your ideal accommodation here, and even your future friend!</p>
-          <br />
-
+    <div className="accommodation-page">
+      <section className="App-section">
+        <h2 className="accommodation-heading">Find Your Perfect Stay</h2>
+        <p className="accommodation-intro">
+          Explore the available accommodation options, connect with hosts, and
+          start your new journey today!
+        </p>
+        <div className="accommodation-list">
           {accommodations.map((accommodation) => (
-            <div className="container" key={accommodation.id}>
+            <div className="accommodation-card" key={accommodation.id}>
               <img
                 src={accommodation.image}
                 alt={accommodation.name}
                 className="accommodation-image"
               />
-
-              <div className="text-section">
+              <div className="accommodation-details">
+                <h3>Host: {accommodation.student}</h3>
+                <p className="accommodation-background">
+                  Background: {accommodation.background}
+                </p>
+                <p className="accommodation-address">
+                  Address: {accommodation.address}
+                </p>
+                <p className="accommodation-type">
+                  Type: {accommodation.type}
+                </p>
+                <p className="accommodation-price">
+                  ${accommodation.price_week}/week
+                </p>
                 <button
-                  className="App-button"
+                  className="App-button connect-button"
                   onClick={() => handleConnectClick(accommodation.student)}
                 >
                   Connect
                 </button>
-
-                <h3>Host: {accommodation.student} ({accommodation.background})</h3>
-                <p>Address: {accommodation.address}</p>
-                <p>Type: {accommodation.type}</p>
-                <p>${accommodation.price_week}</p>
               </div>
             </div>
           ))}
-        </section>
-      </div>
-    </>
+        </div>
+      </section>
+    </div>
   );
 };
 

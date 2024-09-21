@@ -59,7 +59,7 @@ function App() {
               </button>
               <button
                 className="App-button secondary-button"
-                onClick={() => handleButtonClick('/need-place')} // Redirect to the 'I need a place' page
+                onClick={() => handleButtonClick('/accommodation')} // Redirect to the 'Accommodation' page
               >
                 I need a place
               </button>
