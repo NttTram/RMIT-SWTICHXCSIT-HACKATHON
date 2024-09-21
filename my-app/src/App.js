@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
+import Host from './pages/Host';
 import logo from './assets/logo.png';
 
 import Australia from './pages/Australia';
@@ -68,13 +69,17 @@ function App() {
         </div>
       </header>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/australia" element={<Australia />} />
-        <Route path="/accommodation" element={<Accommodation />} />
-      </Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/australia" element={<Australia />} />
+          <Route path="/accommodation" element={<Accommodation />} />
+          <Route path="/have-place" element={<Host/>} />
+
+        </Routes>
+    </Router>
+      
 
       <footer className="App-footer">
         <p>© 2024 CultureConnect | SEASA</p>
