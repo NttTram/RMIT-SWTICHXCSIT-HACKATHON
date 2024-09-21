@@ -43,6 +43,7 @@ body, html {
   color: #61dafb;
 }
 
+/* Banner Styling */
 .App-banner {
   background-color: #1e2a38; /* A dark blue-gray color to match a modern, professional theme */
   background-size: cover;
@@ -66,7 +67,7 @@ body, html {
 
 .App-banner-text {
   max-width: 700px;
-  text-align: left;
+  text-align: center;
 }
 
 .App-banner h1 {
@@ -83,19 +84,39 @@ body, html {
   margin: 20px 0;
 }
 
+/* Button Group Styling */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
 .App-button {
-  background-color: #61dafb;
-  border: none;
-  color: white;
   padding: 15px 30px;
   font-size: 1.2rem;
   border-radius: 5px;
+  border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.App-button:hover {
+.primary-button {
+  background-color: #61dafb;
+  color: white;
+}
+
+.primary-button:hover {
   background-color: #21a1f1;
+}
+
+.secondary-button {
+  background-color: rgb(0, 0, 0);
+  color: #61dafb;
+  border: 2px solid #61dafb;
+}
+
+.secondary-button:hover {
+  background-color: #f0f8ff;
 }
 
 /* Section Styling */
@@ -123,6 +144,20 @@ body, html {
   margin-top: 30px;
   width: 100%;
   border-radius: 10px;
+}
+
+/* Footer Styling */
+.App-footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.App-logo {
+  width: 50px;
+  height: 50px;
 }
 
 /* Features Section */
@@ -167,6 +202,7 @@ body, html {
 .feature-item:hover {
   transform: translateY(-10px);
 }
+
 
 /* Footer Styling */
 .App-footer {
