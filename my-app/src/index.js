@@ -9,12 +9,12 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Auth0Provider
-    domain="dev-i6xg01jdb8148mwe.au.auth0.com"
-    clientId="kDTBqwVq5wt2GuJo5QvgGewx3xrGgHRF"
+    domain={process.env.REACT_APP_AUTH0_DOMAIN}
+    clientId={process.env.REACT_APP_AUTH0_CLIENT_ID}
+    redirectUri={window.location.origin}
     // authorizationParams={{
     //   redirect_uri: window.location.origin
     // }}
-    redirectUri={window.location.origin}
   >
     {/* Wrap App inside Router */}
     <Router>
